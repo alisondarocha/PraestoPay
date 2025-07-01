@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PraestoPay.Application\PraestoPay.Application.csproj" />
+    <ProjectReference Include="..\PraestoPay.Infrastructure\PraestoPay.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
