@@ -6,10 +6,8 @@
 
 - .NET 8  
 - PostgreSQL  
-- RabbitMQ  
-- Entity Framework Core  
-- MediatR  
-- Docker & Docker Compose  
+- RabbitMQ    
+- Docker  
 
 ## 📁 Estrutura
 
