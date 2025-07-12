@@ -4,7 +4,7 @@
 
 ## 🚀 Tecnologias
 
-- .NET 8  
+- .NET 9
 - PostgreSQL  
 - RabbitMQ    
 - Docker  
