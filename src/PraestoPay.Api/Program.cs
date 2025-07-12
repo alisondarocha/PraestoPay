@@ -17,8 +17,8 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 });
-
-builder.Services.AddHealthChecks();
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection")!);
 
 var app = builder.Build();
 
