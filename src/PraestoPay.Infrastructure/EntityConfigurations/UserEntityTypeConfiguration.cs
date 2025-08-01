@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PraestoPay.Domain.AggregatesModel.Identity.UserAggregate;
+using PraestoPay.Domain.AggregatesModel.UserAggregate;
 
 namespace PraestoPay.Infrastructure.EntityConfigurations;
 
@@ -30,11 +30,6 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 
         builder
             .Property(p => p.Email)
-            .IsRequired()
-            .HasMaxLength(100);
-        
-        builder
-            .Property(p => p.PasswordHash)
             .IsRequired()
             .HasMaxLength(100);
 

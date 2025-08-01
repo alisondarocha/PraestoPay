@@ -1,5 +1,5 @@
-﻿using PraestoPay.Domain.AggregatesModel.Identity.UserAggregate;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using PraestoPay.Domain.AggregatesModel.UserAggregate;
 
 namespace PraestoPay.Infrastructure.Repositories.Identity;
 
