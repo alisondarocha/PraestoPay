@@ -1,6 +1,6 @@
 # PraestoPay
 
-**PraestoPay** é um motor de pagamentos construído em .NET 8, com foco em integrações reais com gateways de pagamento, estrutura limpa e modular, e pronta para evoluir em microsserviços.
+**PraestoPay** é um motor de pagamentos construído em .NET 9, com foco em integrações reais com gateways de pagamento, estrutura limpa e modular, e pronta para evoluir em microsserviços.
 
 ## 🚀 Tecnologias
 
