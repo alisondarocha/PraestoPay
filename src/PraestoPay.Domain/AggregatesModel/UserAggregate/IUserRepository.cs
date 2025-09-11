@@ -2,4 +2,5 @@
 
 public interface IUserRepository : IRepository<User>
 {
+    public Task<bool> ExistsAsync();
 }

@@ -2,4 +2,5 @@
 
 public interface IMerchantRepository : IRepository<Merchant>
 {
+    public Task<bool> ExistsAsync(Guid id);
 }

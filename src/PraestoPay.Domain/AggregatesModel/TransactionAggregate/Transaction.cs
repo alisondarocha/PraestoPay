@@ -6,7 +6,11 @@ namespace PraestoPay.Domain.AggregatesModel.TransactionAggregate;
 
 public class Transaction() : Entity
 {
-    public Transaction(decimal amount, string currency, PaymentMethodType paymentMethod, Guid userId, Guid merchantId) : this()
+    public Transaction(decimal amount,
+                       string currency,
+                       PaymentMethodType paymentMethod,
+                       Guid userId,
+                       Guid merchantId) : this()
     {
         Amount = amount;
         Currency = currency;
@@ -29,7 +33,27 @@ public class Transaction() : Entity
     public DateTime? ProcessedAt { get; private set; }
     public DateTime? RefundedAt { get; private set; }
 
-    private void Approve() => Status = TransactionStatus.Approved;
-    private void Reject() => Status = TransactionStatus.Rejected;
-    private void Refund() => Status = TransactionStatus.Refunded;
+    private void Approve()
+    {
+        if (Status != TransactionStatus.Pending)
+            throw new InvalidOperationException("Only pending transactions can be approved.");
+
+        Status = TransactionStatus.Approved;
+    }
+
+    private void Reject()
+    {
+        if (Status != TransactionStatus.Pending)
+            throw new InvalidOperationException("Only pending transactions can be rejected.");
+
+        Status = TransactionStatus.Rejected;
+    }
+    private void Refund()
+    {
+        if (Status != TransactionStatus.Approved)
+            throw new InvalidOperationException("Only approved transactions can be refunded.");
+
+        Status = TransactionStatus.Refunded;
+        RefundedAt = DateTime.UtcNow;
+    }
 }
