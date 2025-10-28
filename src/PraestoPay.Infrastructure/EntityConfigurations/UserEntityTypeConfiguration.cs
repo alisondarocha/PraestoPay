@@ -9,14 +9,15 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
     public void Configure(EntityTypeBuilder<User> builder)
     {
         builder
-            .ToTable("Users");
+            .ToTable("users");
 
         builder
             .HasKey(p => p.Id);
 
         builder
             .Property(p => p.Id)
-            .ValueGeneratedOnAdd();
+            .ValueGeneratedOnAdd()
+            .IsRequired();
 
         builder
            .Property(p => p.Name)
